@@ -1,0 +1,44 @@
+# Identity Account Model
+
+## Purpose
+
+Define how Kile Business Systems separates daily-use, administrative, emergency, and shared-service identities in Microsoft 365.
+
+## Account classes
+
+### Daily-use user account
+Used for normal business activity including email, Teams, SharePoint, Office applications, and routine collaboration.
+
+**Requirements**
+- MFA required
+- No standing Global Administrator role
+- Used for standard productivity work
+
+### Dedicated administrative account
+Used only for privileged Microsoft 365 and Entra administration.
+
+**Requirements**
+- Separate from the daily-use account
+- Strong MFA required
+- No normal mailbox usage unless operationally necessary
+- Least-privilege roles assigned
+- Privileged access should be reviewed periodically
+
+### Emergency-access account
+Used only when normal administrative authentication or Conditional Access fails.
+
+See [`emergency-access.md`](emergency-access.md).
+
+### Shared mailbox identities
+Examples include sales, billing, support, and info mailboxes.
+
+**Requirements**
+- Must not be used as shared interactive login accounts
+- Sign-in should be blocked for the underlying identity where applicable
+- Access should be delegated to named user accounts
+- Full Access and Send As permissions should be assigned as required
+- Shared passwords must not be distributed
+
+## Design principle
+
+Every human should authenticate with a named identity. Access to shared services should be delegated after authentication rather than performed with shared credentials.
