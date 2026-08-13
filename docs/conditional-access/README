@@ -1,0 +1,33 @@
+# Conditional Access Baseline
+
+## Purpose
+
+Document the initial Microsoft Entra Conditional Access baseline for Kile Business Systems.
+
+## Initial policy set
+
+| Policy | Purpose | Initial state |
+|---|---|---|
+| CA001 | Require MFA for users | Report-only |
+| CA002 | Block legacy authentication | Report-only |
+| CA003 | Protect privileged administrators | Report-only |
+
+## Deployment method
+
+1. Design the policy.
+2. Configure exclusions for the emergency-access account where appropriate.
+3. Set the policy to Report-only.
+4. Generate representative sign-ins.
+5. Review Entra sign-in logs and Conditional Access results.
+6. Correct unintended impact.
+7. Enable one policy at a time.
+8. Monitor after enforcement.
+9. Document the final state.
+
+## General standards
+
+- Prefer All resources for broad baseline protection unless a specific exception is justified.
+- Avoid stacking multiple unvalidated changes.
+- Keep a tested emergency-access path.
+- Use least privilege for administrator targeting.
+- Record material changes in `CHANGELOG.md`.
