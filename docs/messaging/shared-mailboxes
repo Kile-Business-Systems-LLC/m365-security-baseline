@@ -1,0 +1,36 @@
+# Shared Mailbox Security Standard
+
+## Purpose
+
+Define the security model for role-based addresses such as sales, billing, support, and info.
+
+## Standard
+
+Shared mailboxes are service mailboxes, not human identities.
+
+## Requirements
+
+- Do not distribute shared mailbox passwords
+- Block direct interactive sign-in for the underlying user object where applicable
+- Delegate mailbox access to named user accounts
+- Grant only the permissions required:
+  - Full Access
+  - Send As
+  - Send on Behalf, only where explicitly needed
+- Remove delegated access promptly when staff roles change
+- Review mailbox permissions periodically
+
+## Current Kile Business Systems shared addresses
+
+- sales
+- billing
+- support
+- info
+
+## Future-state operating model
+
+As staff are hired, each employee receives an individual Microsoft 365 account. Shared mailbox permissions are assigned to that named account according to job function.
+
+## Security rationale
+
+This preserves accountability because actions are tied to authenticated named identities rather than a shared password.
